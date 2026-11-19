@@ -21,7 +21,7 @@
 
 ## A repó tartalma
 - `tasks/` – a feladatleírások
-- `samples_files/` – bemeneti adatok: kis szövegfájlok, Project Gutenberg könyvek, NCBI baktérium-metaadatok, Nextflow napló, phiX174 genom és génjei
+- `samples_files/` – bemeneti adatok: kis szövegfájlok, Project Gutenberg könyvek, NCBI baktérium-metaadatok, Nextflow naplók (egy szintetikus és egy valódi, anonimizált), phiX174 genom és génjei
 - `solutions/` – várt kimenetek és a mini projekt mintamegoldása
 - `llm_example/` – példa: weboldal feldolgozása és összefoglalás helyi LLM-mel
 - `tools/` – oktatói segédszkript a szintetikus Nextflow napló újragenerálásához

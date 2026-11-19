@@ -1,13 +1,13 @@
 Nov-16 17:38:56.223 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -with-report nf_report.html -with-timeline nf_timeline.html -with-dag flowchart.html -with-trace --runDirectory e_coli_2 -resume --outDir e_coli_2
 Nov-16 17:38:56.410 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.5
-Nov-16 17:38:56.440 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/freytagcs/.nextflow/plugins; core-plugins: nf-amazon@2.9.2,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.4,nf-tower@1.9.3,nf-wave@1.7.4
+Nov-16 17:38:56.440 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/user/.nextflow/plugins; core-plugins: nf-amazon@2.9.2,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.4,nf-tower@1.9.3,nf-wave@1.7.4
 Nov-16 17:38:56.474 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
 Nov-16 17:38:56.476 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
 Nov-16 17:38:56.481 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
 Nov-16 17:38:56.498 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Nov-16 17:38:56.532 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/freytagcs/nf_pipelines/TGSprocess/nextflow.config
-Nov-16 17:38:56.535 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/freytagcs/nf_pipelines/TGSprocess/nextflow.config
-Nov-16 17:38:56.571 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/freytagcs/.nextflow/secrets/store.json
+Nov-16 17:38:56.532 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/user/nf_pipelines/pipeline/nextflow.config
+Nov-16 17:38:56.535 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/user/nf_pipelines/pipeline/nextflow.config
+Nov-16 17:38:56.571 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/user/.nextflow/secrets/store.json
 Nov-16 17:38:56.576 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@4b61d0c6] - activable => nextflow.secret.LocalSecretsProvider@4b61d0c6
 Nov-16 17:38:56.596 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
 Nov-16 17:38:57.383 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
@@ -25,15 +25,15 @@ Nov-16 17:38:57.512 [main] DEBUG nextflow.cli.CmdRun -
   System: Linux 5.4.0-216-generic
   Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 21-internal-adhoc.conda.src
   Encoding: UTF-8 (UTF-8)
-  Process: 1089569@madmax [127.0.1.1]
+  Process: 1089569@host [127.0.0.1]
   CPUs: 64 - Mem: 503.5 GB (216.1 GB) - Swap: 8 GB (8 GB)
-Nov-16 17:38:57.557 [main] DEBUG nextflow.Session - Work-dir: /home/freytagcs/nf_pipelines/TGSprocess/work [ext2/ext3]
+Nov-16 17:38:57.557 [main] DEBUG nextflow.Session - Work-dir: /home/user/nf_pipelines/pipeline/work [ext2/ext3]
 Nov-16 17:38:57.600 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
 Nov-16 17:38:57.611 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
 Nov-16 17:38:57.668 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
 Nov-16 17:38:57.679 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
 Nov-16 17:38:57.759 [main] DEBUG nextflow.Session - Session start
-Nov-16 17:38:57.762 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/freytagcs/nf_pipelines/TGSprocess/trace-20261116-63537349.txt
+Nov-16 17:38:57.762 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/user/nf_pipelines/pipeline/trace-20261116-63537349.txt
 Nov-16 17:38:58.486 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
 Nov-16 17:38:58.499 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `sampleID` -- Initialise it to a default value eg. `params.sampleID = some_value`
 Nov-16 17:39:00.262 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:low` matches labels `low` for process with name mongoQuery
@@ -204,37 +204,37 @@ Nov-16 17:39:00.961 [main] DEBUG nextflow.processor.TaskProcessor - Starting pro
 Nov-16 17:39:00.961 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > versionControl
 Nov-16 17:39:00.961 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > runReport
 Nov-16 17:39:00.983 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
-  Script_023847e030fee757: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runSpaTyper/main.nf
-  Script_4129109045e13b4f: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runGenoVi/main.nf
-  Script_4a1abc3e6e147944: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runFlye/main.nf
-  Script_a232c02ca49b0c57: /home/freytagcs/nf_pipelines/TGSprocess/main.nf
-  Script_567bfaadcae6c5dd: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runBamDep/main.nf
-  Script_90d3c6763c8dad17: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runReport/main.nf
-  Script_a6eecf32a87ad593: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runStaphScan/main.nf
-  Script_6dcddeb0f540708f: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runMeFinder/main.nf
-  Script_31cfde4a5a60f947: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runNanoPlot/main.nf
-  Script_28465f95688af5b0: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runMLST/main.nf
-  Script_6e4a7d0607ecda3b: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runPhigaro/main.nf
-  Script_7b2b54061d075edc: /home/freytagcs/nf_pipelines/TGSprocess/./modules/mongoquery/main.nf
-  Script_e8dc14dc4f8b3af7: /home/freytagcs/nf_pipelines/TGSprocess/./modules/linkDemux/main.nf
-  Script_4070e7bf42b173b1: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runSeqKit/main.nf
-  Script_c42b4cb65e6e9db8: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runFastplong/main.nf
-  Script_42c1192fc464af1c: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runBakta/main.nf
-  Script_fa580d308309fbeb: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runTraDb/main.nf
-  Script_13bf7005b60eb244: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runMinimap2/main.nf
-  Script_a3f560d2f0eb50aa: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runDnaApler/main.nf
-  Script_c0f75a255609bc68: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runKleborate/main.nf
-  Script_ef61e7e5d89f3507: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runPlaton/main.nf
-  Script_28e4c3ee74959855: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runMedaka/main.nf
-  Script_b223632d98280674: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runCheckM2/main.nf
-  Script_d6de1908ae258a4d: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runAntiCS/main.nf
-  Script_de55b91991dbce8f: /home/freytagcs/nf_pipelines/TGSprocess/./modules/versionControl/main.nf
-  Script_9fe1abc6021bbd20: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runKraken2/main.nf
-  Script_a324c4cb84926901: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runRacon/main.nf
-  Script_3134b527729f2154: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runResFinder/main.nf
-  Script_173902d5a42ef4da: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runSeqSero2/main.nf
-  Script_e80cf912d6998020: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runAbricate/main.nf
-  Script_817c5f8d20e817ba: /home/freytagcs/nf_pipelines/TGSprocess/./modules/runBusco/main.nf
+  Script_023847e030fee757: /home/user/nf_pipelines/pipeline/./modules/runSpaTyper/main.nf
+  Script_4129109045e13b4f: /home/user/nf_pipelines/pipeline/./modules/runGenoVi/main.nf
+  Script_4a1abc3e6e147944: /home/user/nf_pipelines/pipeline/./modules/runFlye/main.nf
+  Script_a232c02ca49b0c57: /home/user/nf_pipelines/pipeline/main.nf
+  Script_567bfaadcae6c5dd: /home/user/nf_pipelines/pipeline/./modules/runBamDep/main.nf
+  Script_90d3c6763c8dad17: /home/user/nf_pipelines/pipeline/./modules/runReport/main.nf
+  Script_a6eecf32a87ad593: /home/user/nf_pipelines/pipeline/./modules/runStaphScan/main.nf
+  Script_6dcddeb0f540708f: /home/user/nf_pipelines/pipeline/./modules/runMeFinder/main.nf
+  Script_31cfde4a5a60f947: /home/user/nf_pipelines/pipeline/./modules/runNanoPlot/main.nf
+  Script_28465f95688af5b0: /home/user/nf_pipelines/pipeline/./modules/runMLST/main.nf
+  Script_6e4a7d0607ecda3b: /home/user/nf_pipelines/pipeline/./modules/runPhigaro/main.nf
+  Script_7b2b54061d075edc: /home/user/nf_pipelines/pipeline/./modules/mongoquery/main.nf
+  Script_e8dc14dc4f8b3af7: /home/user/nf_pipelines/pipeline/./modules/linkDemux/main.nf
+  Script_4070e7bf42b173b1: /home/user/nf_pipelines/pipeline/./modules/runSeqKit/main.nf
+  Script_c42b4cb65e6e9db8: /home/user/nf_pipelines/pipeline/./modules/runFastplong/main.nf
+  Script_42c1192fc464af1c: /home/user/nf_pipelines/pipeline/./modules/runBakta/main.nf
+  Script_fa580d308309fbeb: /home/user/nf_pipelines/pipeline/./modules/runTraDb/main.nf
+  Script_13bf7005b60eb244: /home/user/nf_pipelines/pipeline/./modules/runMinimap2/main.nf
+  Script_a3f560d2f0eb50aa: /home/user/nf_pipelines/pipeline/./modules/runDnaApler/main.nf
+  Script_c0f75a255609bc68: /home/user/nf_pipelines/pipeline/./modules/runKleborate/main.nf
+  Script_ef61e7e5d89f3507: /home/user/nf_pipelines/pipeline/./modules/runPlaton/main.nf
+  Script_28e4c3ee74959855: /home/user/nf_pipelines/pipeline/./modules/runMedaka/main.nf
+  Script_b223632d98280674: /home/user/nf_pipelines/pipeline/./modules/runCheckM2/main.nf
+  Script_d6de1908ae258a4d: /home/user/nf_pipelines/pipeline/./modules/runAntiCS/main.nf
+  Script_de55b91991dbce8f: /home/user/nf_pipelines/pipeline/./modules/versionControl/main.nf
+  Script_9fe1abc6021bbd20: /home/user/nf_pipelines/pipeline/./modules/runKraken2/main.nf
+  Script_a324c4cb84926901: /home/user/nf_pipelines/pipeline/./modules/runRacon/main.nf
+  Script_3134b527729f2154: /home/user/nf_pipelines/pipeline/./modules/runResFinder/main.nf
+  Script_173902d5a42ef4da: /home/user/nf_pipelines/pipeline/./modules/runSeqSero2/main.nf
+  Script_e80cf912d6998020: /home/user/nf_pipelines/pipeline/./modules/runAbricate/main.nf
+  Script_817c5f8d20e817ba: /home/user/nf_pipelines/pipeline/./modules/runBusco/main.nf
 Nov-16 17:39:00.984 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
 Nov-16 17:39:00.984 [main] DEBUG nextflow.Session - Session await
 Nov-16 17:39:01.094 [Actor Thread 30] DEBUG nextflow.util.HashBuilder - Unable to get file attributes file: /mnt/data/platon_db -- Cause: java.nio.file.NoSuchFileException: /mnt/data/platon_db
@@ -243,16 +243,16 @@ Nov-16 17:39:01.101 [Actor Thread 32] DEBUG nextflow.container.SingularityCache 
 Nov-16 17:39:01.103 [Actor Thread 59] DEBUG nextflow.util.HashBuilder - Unable to get file attributes file: /mnt/data/bakta_db_light -- Cause: java.nio.file.NoSuchFileException: /mnt/data/bakta_db_light
 Nov-16 17:39:01.179 [Actor Thread 40] INFO  nextflow.processor.TaskProcessor - [66/3175ec] Cached process > linkResFinderDb
 Nov-16 17:39:01.179 [Actor Thread 26] INFO  nextflow.processor.TaskProcessor - [49/c0e490] Cached process > linkKrakenDb
-Nov-16 17:39:01.241 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process mongoQuery (1) > jobId: 253085; workDir: /home/freytagcs/nf_pipelines/TGSprocess/work/24/355c7c3b259874ab1e627a84578a82
+Nov-16 17:39:01.241 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process mongoQuery (1) > jobId: 253085; workDir: /home/user/nf_pipelines/pipeline/work/24/355c7c3b259874ab1e627a84578a82
 Nov-16 17:39:01.241 [Task submitter] INFO  nextflow.Session - [24/355c7c] Submitted process > mongoQuery (1)
-Nov-16 17:39:01.274 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process linkPlatonDb > jobId: 253086; workDir: /home/freytagcs/nf_pipelines/TGSprocess/work/f3/78acedbdd752d60dfb1de9f5f7b859
+Nov-16 17:39:01.274 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process linkPlatonDb > jobId: 253086; workDir: /home/user/nf_pipelines/pipeline/work/f3/78acedbdd752d60dfb1de9f5f7b859
 Nov-16 17:39:01.274 [Task submitter] INFO  nextflow.Session - [f3/78aced] Submitted process > linkPlatonDb
-Nov-16 17:39:01.328 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process linkBaktaDb > jobId: 253087; workDir: /home/freytagcs/nf_pipelines/TGSprocess/work/a9/b92d3c0655183f37fe20340e10e9b7
+Nov-16 17:39:01.328 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process linkBaktaDb > jobId: 253087; workDir: /home/user/nf_pipelines/pipeline/work/a9/b92d3c0655183f37fe20340e10e9b7
 Nov-16 17:39:01.328 [Task submitter] INFO  nextflow.Session - [a9/b92d3c] Submitted process > linkBaktaDb
-Nov-16 17:39:05.309 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 253085; id: 1; name: mongoQuery (1); status: COMPLETED; exit: 0; error: -; workDir: /home/freytagcs/nf_pipelines/TGSprocess/work/24/355c7c3b259874ab1e627a84578a82 started: 1794850745303; exited: 2026-11-16T17:39:02.70510731Z; ]
+Nov-16 17:39:05.309 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[jobId: 253085; id: 1; name: mongoQuery (1); status: COMPLETED; exit: 0; error: -; workDir: /home/user/nf_pipelines/pipeline/work/24/355c7c3b259874ab1e627a84578a82 started: 1794850745303; exited: 2026-11-16T17:39:02.70510731Z; ]
 Nov-16 17:39:05.311 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
 Nov-16 17:39:05.335 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
-Nov-16 17:39:05.360 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process linkDemux (1) > jobId: 253088; workDir: /home/freytagcs/nf_pipelines/TGSprocess/work/38/4374c4906cadd158e12bc5c77e5428
+Nov-16 17:39:05.360 [Task submitter] DEBUG nextflow.executor.GridTaskHandler - [SLURM] submitted process linkDemux (1) > jobId: 253088; workDir: /home/user/nf_pipelines/pipeline/work/38/4374c4906cadd158e12bc5c77e5428
 Nov-16 17:39:05.360 [Task submitter] INFO  nextflow.Session - [38/4374c4] Submitted process > linkDemux (1)
 Nov-16 17:39:08.700 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
 Nov-16 17:39:08.732 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:

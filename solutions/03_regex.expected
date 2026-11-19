@@ -13,3 +13,25 @@ SPADES (sample03)
 # 9
 GCF_015775755.1	SAMN16960798	Myxococcus xanthus	strain=DK1622::pDPO-Mxn116-Pvan-Tpase	Complete Genome	07.12.2020	9201039	69.000000	Helmholtz Institute for Pharmaceutical Research Saarland
 GCF_052692855.1	SAMN51178262	Campylobacter jejuni	strain=CBUSCCJ0003	Complete Genome	17.09.2025	1839591	30.000000	Chungbuk National University
+# 03/13
+-with-report
+-with-timeline
+-with-dag
+-with-trace
+# 03/14
+24.10.5
+# 03/15
+mongoQuery
+linkPlatonDb
+linkBaktaDb
+linkDemux
+# 03/16
+     41 home/user
+      6 mnt/data
+# 03/17
+41
+# 03/18
+253085
+253086
+253087
+253088

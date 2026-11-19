@@ -1,6 +1,6 @@
 # 03 – Reguláris kifejezések: grep -P, perl, sed
 
-Bemenet: `samples_files/bacteria_metadata.tsv`, `nextflow.log`, `trace.txt`.
+Bemenet: `samples_files/bacteria_metadata.tsv`, `nextflow.log`, `trace.txt`, és egy valódi, anonimizált naplófájl: `nextflow.real.log`.
 
 Eszközök:
 - `grep -oP 'minta'` – csak az illeszkedő rész kiírása (Perl-regex; `\K`, lookahead)
@@ -25,6 +25,15 @@ Ha a `grep -P` hibát ír (`supports only unibyte and UTF-8 locales`), futtasd e
 10. A szervezetnevet írd át rövid alakra: `Escherichia coli` → `E. coli` (a nemzetség kezdőbetűje + pont). Csak az `organism_name` oszlopra alkalmazd.
 11. Töröld a `strain=` előtagot az egész fájlból, és a törzs nevét tedd zárójelbe.
 12. A `nextflow.log`-ban cseréld az összes `sampleNN` nevet `S_NN`-re.
+
+## Feladatok – valódi napló (`nextflow.real.log`)
+13. Az első sorból (a `nextflow run ...` parancs) add ki az összes `-with-...` kapcsolót és a `--` paramétereket (`grep -oP '\-\-?\w+[\w-]*'`).
+14. Add ki a Nextflow verziószámát (`version 24.10.5` → csak a szám).
+15. Add ki az összes `Submitted process >` után álló folyamatnevet, majd csak a zárójeles sorszám nélkül (`linkDemux (1)` → `linkDemux`).
+16. Gyűjtsd ki az összes abszolút elérési utat (`/mnt/...`, `/home/...`), és számold meg, melyik könyvtár hányszor szerepel (`grep -oP '(?<=\s)/[\w./-]+'`).
+17. A `Workflow process names [dsl2]: ...` sorból bontsd külön sorokba a folyamatok neveit (`perl -ne` + `split /, /`). Hány folyamat van?
+18. Add ki a `jobId: 253085` típusú SLURM azonosítókat. Melyik folyamathoz tartoznak? (Kell hozzá a következő/előző sor is: `perl -0777` vagy `grep -A1`.)
+19. Miért nem működik a 8. feladatban használt mintád a valódi naplón, és mit kell módosítani, hogy többsoros blokkokkal is boldoguljon?
 
 ## Gondolkodtató
 - Mi a különbség a `.*` (mohó) és a `.*?` (lusta) között? Próbáld ki a 4. feladatban.

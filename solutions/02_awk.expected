@@ -33,3 +33,13 @@ DEBUG 41
 ERROR 2
 INFO 45
 WARN 2
+# 02/10
+1420
+# 02/11
+DEBUG 220
+INFO 10
+WARN 2
+# 02/12
+210 [main]
+8 [Task submitter]
+4 [Task monitor]

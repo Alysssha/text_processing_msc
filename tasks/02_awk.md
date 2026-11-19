@@ -7,6 +7,7 @@ Az awk soronként dolgozik: `awk 'minta { művelet }' fájl`. Hasznos: `$1`, `NR
 ## A fájlok
 - `nextflow.log`: egy bioinformatikai Nextflow pipeline naplója (időbélyeg, szál, szint, osztály, üzenet).
 - `trace.txt`: ugyanennek a futásnak a trace táblázata (tabulátorral elválasztva: task_id, hash, name, status, exit, submit, duration, realtime, %cpu, peak_rss).
+- `nextflow.real.log`: egy **valódi** (anonimizált) `.nextflow.log` egy megszakított futásból: 1652 sor, a nagy része DEBUG, sok többsoros blokk (konfiguráció-kiírás, Java üzenetek). Nem olyan tiszta, mint a másik, ezért nehezebb.
 - `bacteria_metadata.tsv`: valódi NCBI RefSeq baktérium assembly metaadatok (80 genom).
 
 ## Feladatok
@@ -20,12 +21,22 @@ Az awk soronként dolgozik: `awk 'minta { művelet }' fájl`. Hasznos: `$1`, `NR
 8. Számold ki az összes genom átlagos GC%-át és a legnagyobb genomot (név + méret).
 9. Futtasd a `reformat_dates.awk`-t a `sample_date.txt`-n (`awk -f reformat_dates.awk sample_date.txt`). Miért nem jó a kimenet? Javítsd ki a mezőelválasztóval (`-F'[\t-]'`), majd bővítsd úgy, hogy a dátumokat `ÉÉÉÉ/HH/NN` formában is kiírja, évenkénti darabszámmal.
 
+## Feladatok – a valódi napló (`nextflow.real.log`)
+10. Hány sor **nem** időbélyeggel kezdődik? Mit tartalmaznak ezek (`NR`, `!/^[A-Z][a-z][a-z]-[0-9][0-9] /`)? Miért okoz ez gondot a szintenkénti számolásnál?
+11. Számold meg a naplószinteket (DEBUG/INFO/WARN) csak az időbélyeges sorokból. Mennyi a DEBUG aránya?
+12. Szálanként (`[main]`, `[Task submitter]`, ...) hány bejegyzés van? Melyik a legaktívabb?
+13. Mennyi ideig tartott a futás az első és az utolsó időbélyeg között? (Az `óra:perc:másodperc` részből számolj másodpercet: `split($2, t, ":")`.)
+14. A futás **megszakadt** (nézd meg az utolsó sorokat: `SIGINT`, `Killing running tasks`). Keresd meg az awk-kal a megszakítás pillanatát, és írd ki a sort közvetlenül előtte és utána.
+
 ## Várt kimenet
 - 1.: `apple 35`, `banana 20`, `cherry 15`
 - 2.: `COMPLETED 40`, `FAILED 2`
 - 3.: `AMRFINDER 8`, `FASTP 8`, `FASTQC 8`, `PROKKA 9`, `SPADES 9`
 - 4.: `SPADES (sample03)` (exit 137), `PROKKA (sample06)` (exit 1); leghosszabb: `SPADES (sample07)`, 717 s
 - 7.: pl. `Escherichia coli 6 5080646`
+- 10.: 1420 sor
+- 11.: `DEBUG 220`, `INFO 10`, `WARN 2`
+- 12.: a `[main]` 210 bejegyzéssel vezet
 
 Teljes ellenőrzés: `solutions/02_awk.expected`.
 
