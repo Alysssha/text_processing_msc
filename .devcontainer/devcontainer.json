@@ -1,0 +1,5 @@
+{
+  "name": "text-processing",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y gawk perl && pip install -r requirements.txt"
+}

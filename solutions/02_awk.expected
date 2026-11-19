@@ -1,0 +1,35 @@
+# 1
+apple         35
+banana        20
+cherry        15
+# 2
+COMPLETED 40
+FAILED 2
+# 3
+AMRFINDER 8
+FASTP 8
+FASTQC 8
+PROKKA 9
+SPADES 9
+# 4
+SPADES (sample03) 137
+PROKKA (sample06) 1
+SPADES (sample07) 717
+# 5
+[Task 86
+[main] 4
+# 7
+Bacillus subtilis            2 4190468
+Enterobacter hormaechei      2 4983230
+Escherichia coli             6 5080646
+Klebsiella pneumoniae        6 5738658
+Pseudomonas aeruginosa       5 6634927
+Salmonella enterica          2 4870346
+Xanthomonas oryzae           2 4736136
+# 8
+50.14 Streptomyces canus 12157638
+# 5
+DEBUG 41
+ERROR 2
+INFO 45
+WARN 2

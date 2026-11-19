@@ -1,0 +1,7 @@
+biopython
+beautifulsoup4
+requests
+ollama
+# optional (04 task)
+nltk
+matplotlib

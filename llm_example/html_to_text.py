@@ -1,7 +1,10 @@
 from bs4 import BeautifulSoup
 import ollama
 
-with open("C:\\Users\\lg_gr\\Downloads\\article.htm", encoding="utf-8") as file:
+from pathlib import Path
+
+# article.htm lives next to this script
+with open(Path(__file__).parent / "article.htm", encoding="utf-8") as file:
     content = file.read()
 
 soup = BeautifulSoup(content, "html.parser")
